@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCOM</title>
+
+    <style>
+        @media screen and (max-width: 992px) {
+            .empty-box {
+                display: none;
+            }
+
+            .exchage-wrapper {
+                position: relative;
+                top: 20px;
+            }
+
+            .how-it-works-list li {
+                width: 50%;
+            }
+
+        }
+
+        @media screen and (max-width: 500px) {
+            .hero-image-container img {
+                width: 100%;
+                margin: auto;
+                
+            }
+
+            .share-icon-container {
+                width: 44px;
+                height: 44px;
+                margin: 4px;
+            }
+
+            .share-links {
+                width: 100%;
+                margin: auto;
+                position: relative;
+                right: 10%;
+                margin-bottom: 20px;
+            }
+
+            .referral-info-list {
+                position: relative;
+                right: 15px;
+            }
+
+            .referral-info-list li {
+                width: 140px;
+            }
+
+            .how-it-works-list li {
+                width: 100%;
+                margin: auto;
+                display: block;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                margin-right: 28px;
+            }
+
+            .copy-icon {
+                position: relative;
+                right: 16px;
+            }
+
+            .exvhange-icon-container {
+                position: relative;
+                left: 10px;
+            }
+
+        }
+
+        .exchange-btn:hover {
+            background: 
+            linear-gradient(0deg, white 0%, white 100%), linear-gradient(326deg, white 0%, white 100%);
+            color: #4563FF;
+            border: #4563FF solid 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <section class="hero-section">
+        <div class="hero-image-container">
+            <img src="./../../assets/images/image 5.png" alt="">
+        </div>
+
+        <p class="hero-title">
+            Refer your friends, earn up to ${{annual_reward}} a year
+        </p>
+
+        <p class="hero-subtitle">
+            Get 3 freinds to join by {{d_month}} {{d_day}} and get up to ${{bonus}} bonus.
+        </p>
+
+        <div class="hero-input-div">
+            
+            <input class="hero-input" type="text" value="{{input_link}}" #inputContent>
+            <div class="icon-container">
+                <svg (click)="ClipboardCopy(inputContent)" class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 9H11C9.89543 9 9 9.89543 9 11V20C9 21.1046 9.89543 22 11 22H20C21.1046 22 22 21.1046 22 20V11C22 9.89543 21.1046 9 20 9Z" stroke="#4563FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M5 15H4C3.46957 15 2.96086 14.7893 2.58579 14.4142C2.21071 14.0391 2 13.5304 2 13V4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H13C13.5304 2 14.0391 2.21071 14.4142 2.58579C14.7893 2.96086 15 3.46957 15 4V5" stroke="#4563FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            </div>
+            
+        </div>
+
+        <section class="share-section">
+            <div class="share-title">
+                Share via
+            </div>
+
+            <ul class="share-links">
+                <li>
+                    <div class="share-icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.38078 7.51121C5.8089 7.81146 5.49121 8.41998 5.49121 9.2153V9.8539L7.28623 10.8136C9.75668 12.1343 13.1956 13.8171 14.4564 14.3223C15.9061 14.9032 16.7275 14.8918 18.2582 14.2697C19.6256 13.714 22.5452 12.2998 25.1105 10.9507L27.0315 9.94034V9.21345C27.0315 8.69051 26.9574 8.36905 26.7673 8.06818C26.2491 7.24734 26.7657 7.28593 16.2971 7.28593C7.34947 7.28593 6.78551 7.29875 6.38078 7.51121ZM5.49121 18.0464C5.49121 23.1348 5.50708 23.5336 5.72589 23.9342C5.855 24.1705 6.15253 24.4748 6.38721 24.6105C6.80365 24.8511 7.04009 24.8571 16.2613 24.8571C25.1183 24.8571 25.7348 24.8433 26.1237 24.6352C26.352 24.5133 26.6494 24.2359 26.7846 24.0187C27.0189 23.6427 27.0306 23.3612 27.031 18.0958C27.0312 15.0552 26.9881 12.586 26.935 12.6087C26.8819 12.6313 25.4224 13.3474 23.6913 14.2002C20.1718 15.9343 18.1263 16.8116 17.0079 17.0669C16.3645 17.2139 16.1558 17.2138 15.5656 17.0666C14.5171 16.8049 12.1847 15.7954 8.73585 14.1106C7.02158 13.2732 5.59035 12.5881 5.5552 12.5881C5.51993 12.5881 5.49121 15.0444 5.49121 18.0464Z" fill="#4563FF"/>
+                    </svg></div>
+                    
+                </li>
+
+                <li>
+                    <div class="share-icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6834 4.63918C9.06621 5.51207 4.99269 9.92028 4.71849 15.423C4.61873 17.425 4.99596 19.2668 5.84856 20.9412L6.22056 21.6716L5.40791 24.6058C4.96092 26.2196 4.60934 27.5539 4.62658 27.5709C4.64383 27.5879 5.973 27.2607 7.5803 26.8436C9.18759 26.4266 10.5626 26.0853 10.636 26.0853C10.7092 26.0853 11.0977 26.2325 11.4993 26.4122C12.8539 27.0188 14.0738 27.2824 15.8267 27.3477C17.5187 27.4106 18.5227 27.2817 19.9137 26.8226C22.1529 26.0838 24.31 24.5097 25.6785 22.616C26.3901 21.6312 27.1254 20.0643 27.4649 18.8095C27.725 17.8478 27.7564 17.5397 27.7564 15.953C27.7564 14.3797 27.7239 14.0548 27.4744 13.1376C26.9511 11.2144 26.0189 9.5636 24.6558 8.14648C22.978 6.40242 20.9689 5.28409 18.614 4.78373C17.6619 4.58141 15.5539 4.50391 14.6834 4.63918ZM15.1079 6.57435C13.5981 6.78163 12.0614 7.34225 10.944 8.09344C10.1847 8.60394 8.87661 9.87436 8.4007 10.5635C6.30374 13.5998 6.10792 17.5188 7.89804 20.6209L8.35802 21.4179L7.89117 23.0732C7.63433 23.9836 7.44647 24.7504 7.47365 24.7773C7.50072 24.8041 8.30606 24.6235 9.26323 24.376L11.0036 23.9259L11.7034 24.3058C15.0352 26.1143 19.2758 25.7242 22.2735 23.3335C23.909 22.0292 25.029 20.2839 25.5977 18.1537C25.8897 17.0598 25.8648 14.8011 25.5478 13.6355C25.0756 11.8988 24.2082 10.4483 22.9004 9.20908C21.9361 8.29523 21.3051 7.85878 20.257 7.38062C18.7303 6.68397 16.6648 6.3606 15.1079 6.57435ZM11.618 10.8694C10.9411 11.2771 10.3627 12.4551 10.3627 13.4257C10.3627 15.5045 13.3163 19.1573 16.0933 20.5131C18.1692 21.5264 19.5263 21.705 20.7106 21.1207C21.5295 20.7166 21.8679 20.3356 22.0411 19.6223C22.2602 18.7206 22.2075 18.6529 20.7531 17.9658C20.0412 17.6295 19.3799 17.3543 19.2834 17.3543C19.1868 17.3543 18.8471 17.6664 18.5285 18.048C18.2097 18.4296 17.864 18.7722 17.7601 18.8091C17.5086 18.8988 16.0326 18.1341 15.3189 17.5443C14.3492 16.7431 13.4191 15.5652 13.4191 15.1383C13.4191 15.0142 13.5467 14.7951 13.7025 14.6513C13.8585 14.5076 14.0746 14.2196 14.1828 14.0114L14.3795 13.6327L13.9185 12.5023C13.3961 11.2212 13.2199 10.8671 13.0479 10.7537C12.8159 10.6008 11.9473 10.6709 11.618 10.8694Z" fill="#4563FF"/>
+                      </svg></div>
+                    
+                </li>
+
+                <li>
+                    <div class="share-icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6133 10.0811C8.579 12.3958 3.45493 14.3873 3.22655 14.5064C2.99804 14.6255 2.74658 14.8633 2.66763 15.0349C2.40356 15.6088 2.85112 15.8492 5.99717 16.8229C7.57 17.3098 8.91584 17.708 8.98797 17.708C9.06011 17.708 12.0433 15.8817 15.6174 13.6495C21.5619 9.9367 22.7474 9.27859 22.7474 9.69119C22.7474 9.74626 20.3639 11.9182 17.4508 14.5176C13.6809 17.8817 12.1539 19.3196 12.1532 19.5063C12.1527 19.6505 12.0683 20.8925 11.9658 22.2661C11.8633 23.6398 11.7786 24.8119 11.7776 24.8708C11.7726 25.1787 12.5799 24.7059 13.4153 23.912C13.9355 23.4178 14.6515 22.7422 15.0067 22.4107L15.6522 21.8083L18.4747 23.8791C20.0269 25.018 21.5006 26.0122 21.7496 26.0885C22.3175 26.2626 22.8948 26.0069 23.1064 25.4876C23.3096 24.989 27.0351 7.53615 27.0351 7.08297C27.0351 6.62516 26.7402 6.02786 26.4619 5.92209C26.3497 5.87951 26.1064 5.85078 25.9213 5.8584C25.7363 5.86602 20.6476 7.76618 14.6133 10.0811Z" fill="#4563FF"/>
+                      </svg></div>
+                    
+                </li>
+
+                <li>
+                    <div class="share-icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.3991 4.21584C10.3503 4.83872 6.92781 7.2553 5.28946 10.6479C4.66104 11.9493 4.43563 12.7129 4.25825 14.1419C4.0291 15.9865 4.38387 17.9468 5.27349 19.7525C5.93805 21.1012 6.67488 22.0887 7.75865 23.0826L8.5657 23.8229V25.9114C8.5657 27.1739 8.60875 28 8.67467 28C8.73459 28 9.6488 27.5159 10.7062 26.9242L12.6287 25.8485L13.5139 26.0375C14.8352 26.3196 16.8979 26.3741 18.2064 26.1616C22.818 25.4125 26.5607 22.2881 27.7608 18.1853C29.5611 12.0309 25.5038 5.76761 18.8167 4.37832C17.7454 4.15581 15.36 4.06806 14.3991 4.21584ZM12.4579 14.7871C9.27908 18.1246 8.60116 18.8518 8.73561 18.7801C8.79791 18.7469 10.0922 18.0466 11.612 17.224L14.3751 15.7283L14.7156 16.1133C14.9029 16.3251 15.5911 17.0453 16.2451 17.7136L17.4341 18.9289L17.6836 18.6674C18.7731 17.5261 23.2791 12.7381 23.45 12.5402C23.5704 12.4008 22.4219 12.9635 20.8533 13.8121L18.0407 15.3339L16.5017 13.8121C15.6551 12.9753 14.9341 12.2904 14.8992 12.2904C14.8645 12.2904 13.7658 13.4139 12.4579 14.7871Z" fill="#4563FF"/>
+                      </svg></div>
+                    
+                </li>
+
+                <li>
+                    <div class="share-icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="28" viewBox="0 0 14 28" fill="none">
+                        <path d="M9.00976 27.0558V13.9985H12.6141L13.0918 9.49894H9.00976L9.01588 7.24684C9.01588 6.07328 9.12739 5.44445 10.813 5.44445H13.0663V0.944336H9.46139C5.13134 0.944336 3.60728 3.12713 3.60728 6.7979V9.49945H0.908203V13.9991H3.60728V27.0558H9.00976Z" fill="#4563FF"/>
+                      </svg></div>
+                    
+                </li>
+
+                <li>
+                    <div class="share-icon-container"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.42871 16.0001C4.42871 9.6196 9.63426 4.42871 16.0328 4.42871C22.4314 4.42871 27.637 9.6196 27.637 16.0001C27.637 16.904 27.5616 17.6357 27.3926 18.3702L27.3901 18.3823C27.3897 18.3845 27.3058 18.7231 27.2595 18.8708C26.9727 19.7855 26.4535 20.5473 25.7578 21.0738C25.0832 21.5846 24.2467 21.8659 23.4026 21.8659C23.2983 21.8659 23.1933 21.8617 23.0904 21.8534C21.8916 21.7575 20.8376 21.1284 20.1913 20.1254C19.0797 21.24 17.6048 21.8532 16.0328 21.8532C12.7963 21.8532 10.1632 19.2275 10.1632 16.0001C10.1632 12.7727 12.7963 10.1471 16.0328 10.1471C19.2693 10.1471 21.9024 12.7727 21.9024 16.0001V17.8868C21.9073 18.9877 22.6481 19.4378 23.281 19.4887C23.9108 19.5371 24.7488 19.1714 25.0407 17.9776C25.1847 17.3229 25.2579 16.6574 25.2579 16.0001C25.2579 10.9277 21.1195 6.80106 16.0328 6.80106C10.9461 6.80106 6.80784 10.9277 6.80784 16.0001C6.80784 21.0724 10.9461 25.1991 16.0328 25.1991C17.8035 25.1991 19.5255 24.6949 21.0128 23.7408L21.0395 23.7237L22.6027 25.536L22.5692 25.5589C20.6373 26.8756 18.377 27.5716 16.0328 27.5716C9.63426 27.5716 4.42871 22.3806 4.42871 16.0001ZM16.0331 19.4809C17.9577 19.4809 19.5236 17.9194 19.5236 16.0002C19.5236 14.081 17.9577 12.5196 16.0331 12.5196C14.1084 12.5196 12.5426 14.081 12.5426 16.0002C12.5426 17.9194 14.1084 19.4809 16.0331 19.4809Z" fill="#4563FF"/>
+                      </svg></div>
+                    
+                </li>
+            </ul>
+
+            <p class="share-subtitle">
+                The&nbsp;referral&nbsp;promotion&nbsp;terms:&nbsp;<a href="">Referral&nbsp;Terms</a> 
+            </p>
+        </section>
+    </section>
+
+    <section class="referral-info-section">
+        <ul class="referral-info-list">
+            <li style="border-top-left-radius: 12px;border-bottom-left-radius: 12px;">
+                    <div class="ref-info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
+                            <path d="M33.333 36.3333L32.2505 27.1324C31.9174 24.3007 29.5175 22.1667 26.6663 22.1667H13.333C8.33301 22.1667 5.11163 17.6145 3.96962 13.0464L3.33301 10.5" stroke="url(#paint0_linear_79_571)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path opacity="0.5" d="M13.333 22.1667V30.5001C13.333 33.6428 13.333 35.2141 14.3093 36.1904C15.2856 37.1667 16.857 37.1667 19.9997 37.1667C23.1424 37.1667 24.7137 37.1667 25.69 36.1904C26.6663 35.2141 26.6663 33.6428 26.6663 30.5001V22.1667" stroke="url(#paint1_linear_79_571)" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle opacity="0.9" cx="19.9997" cy="10.4999" r="6.66667" stroke="url(#paint2_linear_79_571)" stroke-width="2.5"/>
+                            <defs>
+                              <linearGradient id="paint0_linear_79_571" x1="32.4691" y1="36.3333" x2="0.15016" y2="29.6793" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4563FF"/>
+                                <stop offset="1" stop-color="#58AFFF"/>
+                              </linearGradient>
+                              <linearGradient id="paint1_linear_79_571" x1="26.2824" y1="37.1667" x2="11.6724" y2="34.8643" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4563FF"/>
+                                <stop offset="1" stop-color="#58AFFF"/>
+                              </linearGradient>
+                              <linearGradient id="paint2_linear_79_571" x1="26.2824" y1="17.1666" x2="11.7658" y2="14.5929" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#4563FF"/>
+                                <stop offset="1" stop-color="#58AFFF"/>
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                    </div>
+    
+                    <p class="ref-info-title">
+                        {{current_referrals}}
+                    </p>
+    
+                    <div class="ref-info-subtitle">
+                        Current Referrals
+                    </div>
+                
+            </li>
+
+            <li style="border-radius: 0;">
+                <div class="ref-info-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
+                        <path opacity="0.5" d="M29.999 10.5C27.2376 10.5 24.999 8.26142 24.999 5.5" stroke="url(#paint0_linear_79_576)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path opacity="0.5" d="M29.999 13.8333C27.2376 13.8333 24.999 16.0718 24.999 18.8333" stroke="url(#paint1_linear_79_576)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path opacity="0.5" d="M9.99902 10.5C12.7604 10.5 14.999 8.26142 14.999 5.5" stroke="url(#paint2_linear_79_576)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path opacity="0.5" d="M9.99902 13.8333C12.7604 13.8333 14.999 16.0718 14.999 18.8333" stroke="url(#paint3_linear_79_576)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path opacity="0.5" d="M6.66602 36.1473H10.4326C12.1173 36.1473 13.8202 36.3228 15.4599 36.6606C18.3603 37.2582 21.4141 37.3306 24.3443 36.8563C25.789 36.6224 27.2094 36.2648 28.4951 35.6442C29.6558 35.084 31.0776 34.2944 32.0326 33.4099C32.9862 32.5266 33.9793 31.0811 34.6842 29.9512C35.2887 28.9824 34.9963 27.7937 34.0402 27.0717C32.9782 26.2698 31.4022 26.27 30.3404 27.0721L27.3284 29.3474C26.1611 30.2292 24.886 31.0409 23.367 31.2832C23.1844 31.3123 22.993 31.3389 22.7933 31.362M22.7933 31.362C22.7332 31.369 22.6723 31.3756 22.6107 31.3819M22.7933 31.362C23.0363 31.3099 23.2776 31.1601 23.5039 30.9625C24.5759 30.0268 24.6437 28.45 23.7136 27.4052C23.4978 27.1628 23.2452 26.9606 22.9645 26.7932C18.3022 24.0124 11.0484 26.1303 6.66602 29.2382M22.7933 31.362C22.7325 31.375 22.6715 31.3819 22.6107 31.3819M22.6107 31.3819C21.7384 31.4715 20.718 31.4946 19.5856 31.3877" stroke="url(#paint4_linear_79_576)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M29.0237 17.857C30 16.8807 30 15.3094 30 12.1667C30 9.02397 30 7.45262 29.0237 6.47631M29.0237 17.857C28.0474 18.8333 26.476 18.8333 23.3333 18.8333H16.6667C13.524 18.8333 11.9526 18.8333 10.9763 17.857M29.0237 17.857C29.0237 17.857 29.0237 17.857 29.0237 17.857ZM29.0237 6.47631C28.0474 5.5 26.476 5.5 23.3333 5.5L16.6667 5.5C13.524 5.5 11.9526 5.5 10.9763 6.47631M29.0237 6.47631C29.0237 6.47631 29.0237 6.47631 29.0237 6.47631ZM10.9763 6.47631C10 7.45262 10 9.02397 10 12.1667C10 15.3094 10 16.8807 10.9763 17.857M10.9763 6.47631C10.9763 6.47631 10.9763 6.47631 10.9763 6.47631ZM10.9763 17.857C10.9763 17.857 10.9763 17.857 10.9763 17.857Z" stroke="url(#paint5_linear_79_576)" stroke-width="2.5"/>
+                        <path opacity="0.5" d="M21.6654 12.1667C21.6654 13.0871 20.9192 13.8333 19.9987 13.8333C19.0782 13.8333 18.332 13.0871 18.332 12.1667C18.332 11.2462 19.0782 10.5 19.9987 10.5C20.9192 10.5 21.6654 11.2462 21.6654 12.1667Z" stroke="url(#paint6_linear_79_576)" stroke-width="2.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_79_576" x1="29.855" y1="10.5" x2="24.4113" y2="9.53488" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_79_576" x1="29.855" y1="18.8333" x2="24.4113" y2="17.8681" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_79_576" x1="14.855" y1="10.5" x2="9.41133" y2="9.53488" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint3_linear_79_576" x1="14.855" y1="18.8333" x2="9.41133" y2="17.8681" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint4_linear_79_576" x1="34.1835" y1="37.1667" x2="7.34213" y2="25.6097" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint5_linear_79_576" x1="29.4241" y1="18.8333" x2="8.44824" y2="13.2551" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint6_linear_79_576" x1="21.5694" y1="13.8333" x2="17.9402" y2="13.1899" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                </div>
+
+                <p class="ref-info-title">
+                    {{paid_referrals}}
+                </p>
+
+                <div class="ref-info-subtitle">
+                    Referrals that paid
+                </div>
+            </li>
+
+            <li style="border-radius: 0;">
+                <div class="ref-info-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
+                        <circle cx="19.9997" cy="10.4999" r="6.66667" stroke="#1C274C" stroke-width="2.5"/>
+                        <circle cx="19.9997" cy="10.4999" r="6.66667" stroke="url(#paint0_linear_79_588)" stroke-width="2.5"/>
+                        <circle cx="28.3337" cy="30.4999" r="6.66667" stroke="#1C274C" stroke-width="2.5"/>
+                        <circle cx="28.3337" cy="30.4999" r="6.66667" stroke="url(#paint1_linear_79_588)" stroke-width="2.5"/>
+                        <path d="M26.1104 30.5L27.4995 32.1667L30.5548 29.0186" stroke="#1C274C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M26.1104 30.5L27.4995 32.1667L30.5548 29.0186" stroke="url(#paint2_linear_79_588)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <g opacity="0.5">
+                          <path d="M23.333 35.224C22.2768 35.4036 21.158 35.5001 19.9997 35.5001C13.5564 35.5001 8.33301 32.5153 8.33301 28.8334C8.33301 25.1515 13.5564 22.1667 19.9997 22.1667C22.8555 22.1667 25.4717 22.7531 27.4997 23.7266" stroke="#1C274C" stroke-width="2.5"/>
+                          <path d="M23.333 35.224C22.2768 35.4036 21.158 35.5001 19.9997 35.5001C13.5564 35.5001 8.33301 32.5153 8.33301 28.8334C8.33301 25.1515 13.5564 22.1667 19.9997 22.1667C22.8555 22.1667 25.4717 22.7531 27.4997 23.7266" stroke="url(#paint3_linear_79_588)" stroke-width="2.5"/>
+                        </g>
+                        <defs>
+                          <linearGradient id="paint0_linear_79_588" x1="26.2824" y1="17.1666" x2="11.7658" y2="14.5929" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_79_588" x1="34.6164" y1="37.1666" x2="20.0998" y2="34.5929" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_79_588" x1="30.4268" y1="32.1667" x2="25.7301" y2="30.9911" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint3_linear_79_588" x1="26.9478" y1="35.5001" x2="6.73698" y2="30.3492" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                </div>
+
+                <p class="ref-info-title">
+                    {{current_referrals}}
+                </p>
+
+                <div class="ref-info-subtitle">
+                    Days Left to invite friends
+                </div>
+            </li>
+
+            <li style="border-top-right-radius: 12px;border-bottom-right-radius: 12px;">
+                <div class="ref-info-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41" fill="none">
+                        <path d="M24.9292 15.6184L19.9997 20.4999L15.0702 15.6184C10.1994 10.7949 7.76395 8.3832 8.44576 6.3024C8.50437 6.12353 8.57715 5.94954 8.66342 5.78202C9.66711 3.83325 13.1113 3.83325 19.9997 3.83325C26.8881 3.83325 30.3322 3.83325 31.3359 5.78202C31.4222 5.94954 31.495 6.12353 31.5536 6.3024C32.2354 8.3832 29.8 10.7949 24.9292 15.6184Z" stroke="url(#paint0_linear_79_593)" stroke-width="2.5"/>
+                        <path opacity="0.5" d="M15.0702 25.3816L19.9997 20.5L24.9292 25.3816C29.8 30.205 32.2354 32.6167 31.5536 34.6975C31.495 34.8764 31.4222 35.0504 31.3359 35.2179C30.3322 37.1667 26.8881 37.1667 19.9997 37.1667C13.1113 37.1667 9.66711 37.1667 8.66342 35.2179C8.57715 35.0504 8.50437 34.8764 8.44576 34.6975C7.76395 32.6167 10.1994 30.205 15.0702 25.3816L15.0702 25.3816Z" stroke="url(#paint1_linear_79_593)" stroke-width="2.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_79_593" x1="30.9944" y1="20.4999" x2="6.3125" y2="14.3737" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_79_593" x1="30.9944" y1="37.1667" x2="6.3125" y2="31.0404" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#4563FF"/>
+                            <stop offset="1" stop-color="#58AFFF"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                </div>
+
+                <p class="ref-info-title">
+                    {{remaining_purchase_days}}
+                </p>
+
+                <div class="ref-info-subtitle">
+                    Days Left to male purchase
+                </div>
+            </li>
+        </ul>
+
+        <div class="exchage-wrapper">
+            <div class="empty-box">
+
+            </div>
+            
+            <button routerLink="referral" class="exchange-btn">
+                <div class="exvhange-icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path opacity="0.5" d="M22 12.5H2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <path opacity="0.5" d="M12 2.5V22.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M13 12.5C13 14.7091 14.7909 16.5 17 16.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M11 12.5C11 14.7091 9.20914 16.5 7 16.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M12 10.5352C12 9.04529 13.014 7.74659 14.4594 7.38524C16.0631 6.98431 17.5158 8.43697 17.1148 10.0407C16.7535 11.4861 15.4548 12.5001 13.9649 12.5001H12V10.5352Z" stroke="white" stroke-width="1.5"/>
+                        <path d="M11.9996 10.5352C11.9996 9.04529 10.9856 7.74659 9.54022 7.38524C7.93649 6.98431 6.48382 8.43697 6.88476 10.0407C7.24611 11.4861 8.5448 12.5001 10.0347 12.5001H11.9996V10.5352Z" stroke="white" stroke-width="1.5"/>
+                        <path d="M2 12.5C2 7.78595 2 5.42893 3.46447 3.96447C4.92893 2.5 7.28595 2.5 12 2.5C16.714 2.5 19.0711 2.5 20.5355 3.96447C22 5.42893 22 7.78595 22 12.5C22 17.214 22 19.5711 20.5355 21.0355C19.0711 22.5 16.714 22.5 12 22.5C7.28595 22.5 4.92893 22.5 3.46447 21.0355C2 19.5711 2 17.214 2 12.5Z" stroke="white" stroke-width="1.5"/>
+                      </svg>
+                </div>
+                
+                Exchange your earned bonuses
+            </button>
+        </div>
+        
+    </section>
+
+    <section class="how-it-works-section">
+        <p class="how-it-works-title">
+            How it works
+        </p>
+
+        <ul class="how-it-works-list">
+
+                    <li>
+                        <div class="step-container">
+                            <p class="step-number">
+                                Step 1
+                            </p>
+                        </div>
+        
+                        <div class="guide-container">
+                            <p class="guide-title">
+                                Share
+                            </p>
+        
+                            <div class="guide-description">
+                                Share your personalized QR code or referral link to spread 
+                                the word about our business in your local area.
+                            </div>
+                        </div>
+                    </li>
+        
+                    <li>
+                        <div class="step-container">
+                            <p class="step-number">
+                                Step 2
+                            </p>
+                        </div>
+        
+                        <div class="guide-container">
+                            <p class="guide-title">
+                                Encourage to sign up
+                            </p>
+        
+                            <div class="guide-description">
+                                Send a friendly reminder to your loved ones to sign up 
+                                within 10 days to be eligible for incredible rewards.
+                            </div>
+                        </div>
+                    </li>
+        
+                    <li>
+                        <div class="step-container">
+                            <p class="step-number">
+                                Step 3
+                            </p>
+                        </div>
+        
+                        <div class="guide-container">
+                            <p class="guide-title">
+                                Making a purchase
+                            </p>
+        
+                            <div class="guide-description">
+                                When your friends and family make a purchase, you'll 
+                                receive a $500 hotel voucher or a 7-night luxury vacation.
+                            </div>
+                        </div>
+                    </li>
+        
+                    <li>
+                        <div class="step-container">
+                            <p class="step-number">
+                                Step 4
+                            </p>
+                        </div>
+        
+                        <div class="guide-container">
+                            <p class="guide-title">
+                                Get better rewards
+                            </p>
+        
+                            <div class="guide-description">
+                                Sign up, create an account, gift your friends, and earn points for better rewards.
+                            </div>
+                        </div>
+                    </li>
+        
+                    <li>
+                        <div class="step-container"> <p class="step-number">
+                            Step 4
+                        </p></div>
+        
+                        <div class="guide-container">
+                            <p class="guide-title">
+                                You have {{remaining_purchase_days}} days
+                            </p>
+        
+                            <div class="guide-description">
+                                Cash out anytime within 180 days and enjoy the benefits at your chosen time.
+                            </div>
+                        </div>
+                    </li>
+                
+        </ul>
+    </section>
+</body>
+
+
+</html>
+
+
